@@ -18,6 +18,7 @@ on CommandRun(withCmd, withTheme, theTitle)
 			activate
             tell application "System Events"
                 tell process "Warp"
+                    delay 0.5
                     keystroke "t" using command down
                 end tell
 	        end tell
@@ -28,7 +29,6 @@ on CommandRun(withCmd, withTheme, theTitle)
                     delay 0.5
                     key code 36
                 end tell
-	        end tell
-		
+	        end tell		
 	end tell
 end CommandRun
