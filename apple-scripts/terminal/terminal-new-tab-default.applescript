@@ -1,10 +1,10 @@
 --for testing uncomment the "on run" block
---on run
---	set argsCmd to "ps aux | grep [s]creen"
---	set argsTheme to "Homebrew"
---	set argsTitle to "Custom title"
---	scriptRun(argsCmd, argsTheme, argsTitle)
---end run
+on run
+	set argsCmd to "ps aux | grep [s]creen"
+	set argsTheme to "Homebrew"
+	set argsTitle to "Custom title"
+	scriptRun(argsCmd, argsTheme, argsTitle)
+end run
 
 on scriptRun(argsCmd, argsTheme, argsTitle)
 	set withCmd to (argsCmd)
@@ -14,7 +14,7 @@ on scriptRun(argsCmd, argsTheme, argsTitle)
 end scriptRun
 
 on CommandRun(withCmd, withTheme, theTitle)
-	tell application "Terminal"
+	tell application "Warp.app"
 		if it is not running then
 			--if this is the first time Terminal is running you have specify window 1
 			--if you dont do this you will get two windows and the title wont be set
@@ -36,7 +36,7 @@ on CommandRun(withCmd, withTheme, theTitle)
 				reopen
 				activate
 				tell application "System Events"
-					tell process "Terminal"
+					tell process "Warp"
 						delay 0.3
 						keystroke "t" using {command down}
 					end tell

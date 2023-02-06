@@ -1,10 +1,10 @@
 --for testing uncomment the "on run" block
---on run
---	set argsCmd to "ps aux | grep xcode"
---	set argsTheme to "Homebrew"
---	set argsTitle to "Custom title"
---	scriptRun(argsCmd, argsTheme, argsTitle)
---end run
+on run
+	set argsCmd to "ps aux | grep xcode"
+	set argsTheme to "Homebrew"
+	set argsTitle to "Custom title"
+	scriptRun(argsCmd, argsTheme, argsTitle)
+end run
 
 on scriptRun(argsCmd, argsTheme, argsTitle)
 	set withCmd to (argsCmd)
@@ -14,7 +14,7 @@ on scriptRun(argsCmd, argsTheme, argsTitle)
 end scriptRun
 
 on CommandRun(withCmd, withTheme, theTitle)
-	tell application "iTerm"
+	tell application "Warp"
 		if it is not running then
 			activate
 			if (count windows) is 0 then
@@ -32,7 +32,7 @@ on CommandRun(withCmd, withTheme, theTitle)
 end CommandRun
 
 on NewWin(argsTheme)
-	tell application "iTerm"
+	tell application "Warp"
 		try
 			create window with profile argsTheme
 		on error msg
@@ -42,7 +42,7 @@ on NewWin(argsTheme)
 end NewWin
 
 on SetWinParam(argsTitle, argsCmd)
-	tell application "iTerm"
+	tell application "Warp"
 		tell the current window
 			tell the current session
 				set name to argsTitle
@@ -53,7 +53,7 @@ on SetWinParam(argsTitle, argsCmd)
 end SetWinParam
 
 on NewTab(argsTheme)
-	tell application "iTerm"
+	tell application "Warp"
 		tell the current window
 			try
 				create tab with profile withTheme
@@ -65,7 +65,7 @@ on NewTab(argsTheme)
 end NewTab
 
 on SetTabParam(argsTitle, argsCmd)
-	tell application "iTerm"
+	tell application "Warp"
 		tell the current window
 			tell the current tab
 				tell the current session
