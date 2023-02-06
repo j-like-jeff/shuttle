@@ -39,6 +39,9 @@
 		C149EC1115D5214600B1F558 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C149EC1015D5214600B1F558 /* AppDelegate.m */; };
 		C149EC1415D5214600B1F558 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C149EC1215D5214600B1F558 /* MainMenu.xib */; };
 		C159DC2815D5DE8000F5DE24 /* shuttle.icns in Resources */ = {isa = PBXBuildFile; fileRef = C159DC2715D5DE7F00F5DE24 /* shuttle.icns */; };
+		F588929C2991391100675A00 /* warp-current-window.scpt in Resources */ = {isa = PBXBuildFile; fileRef = F58892972991376300675A00 /* warp-current-window.scpt */; };
+		F588929D2991391100675A00 /* warp-new-tab-default.scpt in Resources */ = {isa = PBXBuildFile; fileRef = F58892982991376300675A00 /* warp-new-tab-default.scpt */; };
+		F588929E2991391100675A00 /* warp-new-window.scpt in Resources */ = {isa = PBXBuildFile; fileRef = F58892992991376300675A00 /* warp-new-window.scpt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +130,9 @@
 		C149EC0F15D5214600B1F558 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C149EC1015D5214600B1F558 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C159DC2715D5DE7F00F5DE24 /* shuttle.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = shuttle.icns; path = ../shuttle.icns; sourceTree = "<group>"; };
+		F58892972991376300675A00 /* warp-current-window.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "warp-current-window.scpt"; sourceTree = "<group>"; };
+		F58892982991376300675A00 /* warp-new-tab-default.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "warp-new-tab-default.scpt"; sourceTree = "<group>"; };
+		F58892992991376300675A00 /* warp-new-window.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "warp-new-window.scpt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,9 @@
 		A12D9BE61BCF2C72004F52A6 /* apple-scpt */ = {
 			isa = PBXGroup;
 			children = (
+				F58892972991376300675A00 /* warp-current-window.scpt */,
+				F58892982991376300675A00 /* warp-new-tab-default.scpt */,
+				F58892992991376300675A00 /* warp-new-window.scpt */,
 				24399FE5219CD0F700C8658F /* virtual-with-screen.scpt */,
 				A124BA161D45572B00218F2F /* iTerm2-stable-current-window.scpt */,
 				A124BA171D45572B00218F2F /* iTerm2-stable-new-tab-default.scpt */,
@@ -310,7 +319,7 @@
 		C149EBF015D5214600B1F558 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = fitztrev;
 				TargetAttributes = {
 					18F7A8C9224A8129000CDCA9 = {
@@ -321,7 +330,7 @@
 			};
 			buildConfigurationList = C149EBF315D5214600B1F558 /* Build configuration list for PBXProject "Shuttle" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				English,
@@ -356,6 +365,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F588929C2991391100675A00 /* warp-current-window.scpt in Resources */,
+				F588929D2991391100675A00 /* warp-new-tab-default.scpt in Resources */,
+				F588929E2991391100675A00 /* warp-new-window.scpt in Resources */,
 				A12D9BF61BCF2C73004F52A6 /* terminal-current-window.scpt in Resources */,
 				A12D9BF31BCF2C73004F52A6 /* iTerm2-nightly-current-window.scpt in Resources */,
 				A1B7B9DD1DB53ED200809327 /* Localizable.strings in Resources */,
@@ -564,12 +576,14 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -613,12 +627,14 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -641,10 +657,11 @@
 				CODE_SIGN_ENTITLEMENTS = Shuttle/Shuttle.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Shuttle/Shuttle-Prefix.pch";
 				INFOPLIST_FILE = "Shuttle/Shuttle-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = "shuttle.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -657,10 +674,11 @@
 				CODE_SIGN_ENTITLEMENTS = Shuttle/Shuttle.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Shuttle/Shuttle-Prefix.pch";
 				INFOPLIST_FILE = "Shuttle/Shuttle-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = "shuttle.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

@@ -596,6 +596,11 @@
     NSString *terminalCurrentWindow = [[NSBundle mainBundle] pathForResource:@"terminal-current-window" ofType:@"scpt"];
     NSString *terminalNewTabDefault = [[NSBundle mainBundle] pathForResource:@"terminal-new-tab-default" ofType:@"scpt"];
     
+    //Set Paths to Warp Applescripts
+    NSString *warpNewWindow =  [[NSBundle mainBundle] pathForResource:@"warp-new-window" ofType:@"scpt"];
+    NSString *warpCurrentWindow = [[NSBundle mainBundle] pathForResource:@"warp-current-window" ofType:@"scpt"];
+    NSString *warpNewTabDefault = [[NSBundle mainBundle] pathForResource:@"warp-new-tab-default" ofType:@"scpt"];
+    
     //Set Path to virtual with screen AppleScripts
     NSString *terminalVirtualWithScreen = [[NSBundle mainBundle] pathForResource:@"virtual-with-screen" ofType:@"scpt"];
     
@@ -675,6 +680,27 @@
             if ( [terminalWindow isEqualToString:@"virtual"] ) {
                 [self runScript:terminalVirtualWithScreen handler:handlerName parameters:passParameters];
             }
+        }
+    }
+    //If JSON settings are set to use Warp
+    else if ( [terminalPref rangeOfString: @"warp"].location !=NSNotFound ) {
+        
+        NSLog(@"TerminalPref: %@ TerminalWindow: %@", terminalPref, terminalWindow);
+        
+        if ( [terminalWindow isEqualToString:@"new"] ) {
+            [self runScript:warpNewWindow handler:handlerName parameters:passParameters];
+        }
+        //if we are running in the current iTerm "Stable" Window
+        if ( [terminalWindow isEqualToString:@"current"] ) {
+            [self runScript:warpCurrentWindow handler:handlerName parameters:passParameters];
+        }
+        //we are using the default action of shuttle... The active window in a new tab
+        if ( [terminalWindow isEqualToString:@"tab"] ) {
+            [self runScript:warpNewTabDefault handler:handlerName parameters:passParameters];
+        }
+        //don't spawn a terminal run the command in the background using screen
+        if ( [terminalWindow isEqualToString:@"virtual"] ) {
+            [self runScript:terminalVirtualWithScreen handler:handlerName parameters:passParameters];
         }
     }
     //If JSON settings are set to use Terminal.app
