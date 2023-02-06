@@ -12,6 +12,8 @@
 - (BOOL)application:(NSApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<NSUserActivityRestoring>> * _Nonnull))restorationHandler {
     NSArray *objectsFromJSON = [userActivity.userInfo[@"kCSSearchableItemActivityIdentifier"] componentsSeparatedByString:(@"¬_¬")];
     
+    NSLog(@"The array objectsFromJSON contains: %@", objectsFromJSON);
+    
     [self openHost:objectsFromJSON];
     
     return YES;
@@ -25,6 +27,8 @@
         for(id key in self->spotlightIndex){
             
             NSDictionary *cfg = [self->spotlightIndex objectForKey:key];
+            
+            NSLog(@"The dictionary cfg contains: %@", cfg);
             
             CSSearchableItemAttributeSet *attributeSet =  [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString*)kUTTypeApplication];
             
@@ -684,8 +688,6 @@
     }
     //If JSON settings are set to use Warp
     else if ( [terminalPref rangeOfString: @"warp"].location !=NSNotFound ) {
-        
-        NSLog(@"TerminalPref: %@ TerminalWindow: %@", terminalPref, terminalWindow);
         
         if ( [terminalWindow isEqualToString:@"new"] ) {
             [self runScript:warpNewWindow handler:handlerName parameters:passParameters];
